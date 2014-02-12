@@ -60,7 +60,7 @@ $params = [
 $client->transactions->charge($params);
 ```
 
-Create a new transaction refurd
+Create a new transaction refund
 
 ```php
 $params = [
