@@ -135,7 +135,7 @@ A REPL for experimenting and debugging is provided, powered by [boris](https://g
 
 To start it, run the following command (replacing `API_KEY` with your API key)
 
-    $ ./vendor/bin/sr-repl API_KEY
+    $ bin/sr-repl API_KEY
     [1] sr-repl > $client;
     // object(SaasRunner\Client)(
     //   'client' => object(Guzzle\Http\Client)(
@@ -149,4 +149,4 @@ The `$client` object is preloaded for you, using the API key you gave.
 
 ## Running the tests
 
-    $ ./vendor/bin/phpspec run
+    $ phpspec run
