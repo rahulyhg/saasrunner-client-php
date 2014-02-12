@@ -1,7 +1,9 @@
 {
     "name": "simpleweb/saasrunner-client-php",
     "description": "Client library for Saas Runner REST API",
+    "version": "0.1.0",
     "keywords": ["api", "client", "rest", "http", "saas", "runner", "saasrunner"],
+    "homepage": "https://github.com/simpleweb/saasrunner-client-php",
     "license": "MIT",
     "authors": [
         {
