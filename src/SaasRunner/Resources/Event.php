@@ -32,7 +32,9 @@ class Event
     public function index()
     {
         $response = $this->client->get('/events');
-        return $response->json();
+        $data = $response->json();
+
+        return $data;
     }
 
     /**
@@ -45,7 +47,9 @@ class Event
     public function show($id)
     {
         $response = $this->client->get("/events/$id");
-        return $response->json();
+        $data = $response->json();
+
+        return $data;
     }
 
     /**
@@ -58,6 +62,8 @@ class Event
     public function destroy($id)
     {
         $response = $this->client->delete("/events/$id");
-        return $response->json();
+        $data = $response->json();
+
+        return $data;
     }
 }

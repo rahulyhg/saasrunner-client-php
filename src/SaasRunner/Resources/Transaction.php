@@ -46,7 +46,9 @@ class Transaction
     public function charge($params = [])
     {
         $response = $this->client->post('/transactions/charge', ['transaction' => $params]);
-        return $response->json();
+        $data = $response->json();
+
+        return $data;
     }
 
     /**
@@ -59,6 +61,8 @@ class Transaction
     public function refund($params = [])
     {
         $response = $this->client->post('/transactions/refund', ['transaction' => $params]);
-        return $response->json();
+        $data = $response->json();
+
+        return $data;
     }
 }
