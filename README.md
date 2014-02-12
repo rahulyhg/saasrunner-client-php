@@ -142,3 +142,7 @@ To start it, run the following command (replacing `API_KEY` with your API key)
     // )
 
 The `$client` object is preloaded for you, using the API key you gave.
+
+## Running the tests
+
+    $ ./vendor/bin/phpunit --colors --bootstrap vendor/autoload.php tests/
