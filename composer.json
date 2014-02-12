@@ -16,7 +16,7 @@
         "guzzle/guzzle": "~3.8"
     },
     "require-dev": {
-        "phpunit/phpunit": "~3.7",
+        "phpspec/phpspec": "2.0.0-RC3",
         "d11wtq/boris": "~1.0"
     },
     "autoload": {
