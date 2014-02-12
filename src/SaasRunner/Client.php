@@ -4,8 +4,33 @@ namespace SaasRunner;
 
 use Guzzle;
 
+# SaasRunner\Client
+#
+# Responsible for sending requests and processing responses from the API.
+# Delegates resources to the relevant Resource class.
+#
+# Example:
+#
+#   $client = new SaasRunner\Client('5201bad4-014a-4eb6-b18c-35b18c6b4249');
+#
+#   $client->subscribers->create(['subscriber_uid' => 'SB#012743']);
+#   // array(
+#   //   'subscriber' => array(
+#   //     'id' => 5065,
+#   //     'subscriber_uid' => 'SB#012743',
+#   //     'dated_at' => '2014-02-12',
+#   //     'meta' => NULL
+#   //   )
+#   // )
+#
 class Client {
 
+    # Public: create a new instance of SaasRunner\Client
+    #
+    #   string $apiKey  - Your Saas Runner dashboard API key
+    #   string $apiHost - Alternate API hostname ("api.saarunner.com")
+    #
+    # Returns instance of SaasRunner\Client
     public function __construct($apiKey, $apiHost = 'api.saasrunner.com') {
         $this->client = new Guzzle\Http\Client('http://' . $apiHost);
         $this->setApiKey($apiKey);
