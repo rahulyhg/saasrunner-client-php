@@ -124,7 +124,7 @@ try {
     // [url] http://api.saasrunner.com/subscribers
 
     $response = $ex->getResponse();
-    $response->getStatusCode();
+    echo $response->getStatusCode();
     // 400
 }
 ```
@@ -135,7 +135,7 @@ A REPL for experimenting and debugging is provided, powered by [boris](https://g
 
 To start it, run the following command (replacing `API_KEY` with your API key)
 
-    $ sr-repl API_KEY
+    $ ./vendor/bin/sr-repl API_KEY
     [1] sr-repl > $client;
     // object(SaasRunner\Client)(
     //   'client' => object(Guzzle\Http\Client)(
