@@ -145,4 +145,4 @@ The `$client` object is preloaded for you, using the API key you gave.
 
 ## Running the tests
 
-    $ ./vendor/bin/phpunit --colors --bootstrap vendor/autoload.php tests/
+    $ ./vendor/bin/phpspec run
