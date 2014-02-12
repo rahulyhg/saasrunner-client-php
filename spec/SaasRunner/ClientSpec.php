@@ -7,33 +7,33 @@ use Prophecy\Argument;
 
 class ClientSpec extends ObjectBehavior
 {
-    function let()
+    public function let()
     {
         $this->beConstructedWith('a78b34cfa82');
         $this->shouldBeAnInstanceOf('SaasRunner\Client');
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType('SaasRunner\Client');
     }
 
-    function it_should_assign_the_api_key()
+    public function it_should_assign_the_api_key()
     {
         $this->apiKey->shouldBe('a78b34cfa82');
     }
 
-    function it_should_instantiate_a_guzzle_client()
+    public function it_should_instantiate_a_guzzle_client()
     {
         $this->client->shouldBeAnInstanceOf('Guzzle\Http\Client');
     }
 
-    function it_should_the_api_key_in_the_default_headers()
+    public function it_should_the_api_key_in_the_default_headers()
     {
         $this->client->getDefaultOption('headers')->shouldBe(['X-API-Key' => 'a78b34cfa82']);
     }
 
-    function it_should_perform_a_get_request(
+    public function it_should_perform_a_get_request(
         \Guzzle\Http\Client $guzzle,
         \Guzzle\Http\Message\Request $request
     ) {
@@ -43,7 +43,7 @@ class ClientSpec extends ObjectBehavior
         $this->get('/events')->shouldReturn(null);
     }
 
-    function it_should_perform_a_post_request(
+    public function it_should_perform_a_post_request(
         \Guzzle\Http\Client $guzzle,
         \Guzzle\Http\Message\Request $request
     ) {
@@ -53,7 +53,7 @@ class ClientSpec extends ObjectBehavior
         $this->post('/events')->shouldReturn(null);
     }
 
-    function it_should_perform_a_delete_request(
+    public function it_should_perform_a_delete_request(
         \Guzzle\Http\Client $guzzle,
         \Guzzle\Http\Message\Request $request
     ) {
