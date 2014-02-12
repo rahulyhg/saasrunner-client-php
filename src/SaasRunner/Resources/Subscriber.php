@@ -45,6 +45,8 @@ class Subscriber
     public function create($params = [])
     {
         $response = $this->client->post('/subscribers', ['subscriber' => $params]);
-        return $response->json();
+        $data = $response->json();
+
+        return $data;
     }
 }
