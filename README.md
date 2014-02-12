@@ -2,6 +2,8 @@
 
 PHP client library for the Saas Runner REST API
 
+> NB. Requires PHP 5.4+
+
 ## Installation
 
 Use [Composer](https://getcomposer.org/) to install `saasrunner-client-php`
