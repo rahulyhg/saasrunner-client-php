@@ -9,7 +9,6 @@ Use [Composer](https://getcomposer.org/) to install `saasrunner-client-php`
 Add `simpleweb/saasrunner-client-php` to your `composer.json` file
 
 ```json
-# composer.json
 {
   "require": {
     "simpleweb/saasrunner-client-php": "~0.1"
@@ -88,6 +87,42 @@ Delete an event
 
 ```php
 $client->events->destroy(3732);
+```
+
+## Error handling
+
+Any response from the Saas Runner API with a `4xx` status code will throw the following exception
+
+```php
+SaasRunner\Exception\ResponseError
+```
+
+For example:
+
+```php
+[1] sr-repl > $client->subscribers->create();
+PHP Fatal error:  Uncaught exception 'SaasRunner\Exception\ResponseError' with message 'Client error response
+[status code] 400
+[reason phrase] Bad Request
+[url] http://api.saasrunner.com/subscribers' in src/SaasRunner/Client.php:88
+```
+
+You can catch this exception and programatically inspect the response
+
+```php
+try {
+    $client->subscribers->create();
+} catch(\SaasRunner\Exception\ResponseError $exception) {
+    echo $ex->getMessage();
+    // Client error response
+    // [status code] 400
+    // [reason phrase] Bad Request
+    // [url] http://api.saasrunner.com/subscribers
+
+    $response = $ex->getResponse();
+    $response->getStatusCode();
+    // 400
+}
 ```
 
 ## Built-in Saas Runner REPL
