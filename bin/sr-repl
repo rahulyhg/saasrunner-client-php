@@ -7,13 +7,10 @@ require "vendor/autoload.php";
 $boris = new \Boris\Boris("sr-repl > ");
 
 // Guzzle client with our API base URL
-$client = new SaasRunner\Client($argv[1], $argv[2]);
+$client = new SaasRunner\Client($argv[1]);
 
 // We don't want to create the Client object every time.
 $boris->setLocal("client", $client);
-
-// Default inspectors are bit noisy. Let's override that.
-// $boris->setInspector(new GuzzleInspector());
 
 // Start the REPL
 $boris->start();
