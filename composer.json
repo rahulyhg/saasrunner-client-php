@@ -1,0 +1,25 @@
+{
+    "name": "simpleweb/saasrunner-client-php",
+    "description": "Client library for Saas Runner REST API",
+    "keywords": ["api", "client", "rest", "http", "saas", "runner", "saasrunner"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paul Springett",
+            "email": "paul@simpleweb.co.uk"
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "guzzle/guzzle": "~3.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~3.7",
+        "d11wtq/boris": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SaasRunner\\": "src/SaasRunner"
+        }
+    }
+}
