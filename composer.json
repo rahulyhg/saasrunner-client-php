@@ -24,5 +24,6 @@
             "SaasRunner\\": "src/SaasRunner"
         }
     },
-    "bin": ["bin/sr-repl"]
+    "bin": ["bin/sr-repl"],
+    "bin-dir": "bin"
 }
