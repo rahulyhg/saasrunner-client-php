@@ -13,7 +13,7 @@ Add `simpleweb/saasrunner-client-php` to your `composer.json` file
 ```json
 {
   "require": {
-    "simpleweb/saasrunner-client-php": "~0.1"
+    "simpleweb/saasrunner-client-php": "~0.1",
   }
 }
 ```
