@@ -28,7 +28,7 @@ class Transaction {
     #   Client $client - SaasRunner\Client with API key
     #
     # Returns instance of SaasRunner\Resources\Transaction
-    public function __construct(Client $client) {
+    public function __construct(\SaasRunner\Client $client) {
         $this->client = $client;
     }
 
