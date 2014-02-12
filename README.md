@@ -24,6 +24,8 @@ and then run
 
 ## Usage
 
+Refer to the [Saas Runner API docs](http://docs.saasrunner.apiary.io/) for more information on the API.
+
 First create a client object with your Saas Runner API key
 
 ```php
