@@ -33,7 +33,10 @@ class Client {
     # Returns instance of SaasRunner\Client
     public function __construct($apiKey, $apiHost = 'api.saasrunner.com') {
         $this->client = new Guzzle\Http\Client('http://' . $apiHost);
+
         $this->setApiKey($apiKey);
+
+        $this->subscribers  = new \SaasRunner\Resources\Subscriber($this);
     }
 
     # Public: perform an HTTP GET request
