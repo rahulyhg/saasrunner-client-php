@@ -37,6 +37,7 @@ class Client {
         $this->setApiKey($apiKey);
 
         $this->subscribers  = new \SaasRunner\Resources\Subscriber($this);
+        $this->transactions = new \SaasRunner\Resources\Transaction($this);
     }
 
     # Public: perform an HTTP GET request
