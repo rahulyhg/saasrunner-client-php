@@ -15,7 +15,7 @@ class Client {
 
     protected function setApiKey($apiKey) {
         $this->apiKey = $apiKey;
-        $this->client->setDefaultOption('header', array('X-API-Key' => $apiKey));
+        $this->client->setDefaultOption('headers', ['X-API-Key' => $apiKey]);
 
         return $this;
     }
