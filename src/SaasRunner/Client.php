@@ -7,9 +7,8 @@ use Guzzle;
 class Client {
 
     public function __construct($apiKey, $apiHost = 'api.saasrunner.com') {
-        $this->setApiKey($apiKey);
-
         $this->client = new Guzzle\Http\Client('http://' . $apiHost);
+        $this->setApiKey($apiKey);
     }
 
 
