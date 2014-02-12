@@ -75,10 +75,22 @@ class Client {
     #   string $path - URL path to send the request to
     #   array $params - Parameters to send as the POST body
     #
+    # Throws SaasRunner\Exception\ResponseError for HTTP response starting 4xx
     # Return instance of Guzzle\Http\Message\Response
     protected function request($httpMethod, $path, $params = []) {
         $request = $this->client->createRequest($httpMethod, $path, [], $params, []);
-        $response = $request->send();
+
+        try {
+            $response = $request->send();
+        } catch (Guzzle\Http\Exception\ClientErrorResponseException $exception) {
+            $message = $exception->getMessage();
+            $response = $exception->getResponse();
+
+            $e = new \SaasRunner\Exception\ResponseError($message);
+            $e->setResponse($response);
+
+            throw $e;
+        }
 
         return $response;
     }
