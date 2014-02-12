@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+// composer autoloader
+require "vendor/autoload.php";
+
+// Initialize Boris with our own prompt.
+$boris = new \Boris\Boris("sr-repl > ");
+
+// Guzzle client with our API base URL
+$client = new SaasRunner\Client($argv[1]);
+
+// We don't want to create the Client object every time.
+$boris->setLocal("client", $client);
+
+// Start the REPL
+$boris->start();
