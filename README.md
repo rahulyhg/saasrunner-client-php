@@ -149,4 +149,4 @@ The `$client` object is preloaded for you, using the API key you gave.
 
 ## Running the tests
 
-    $ phpspec run
+    $ bin/phpspec run
