@@ -42,6 +42,7 @@ class Client
 
         $this->subscribers  = new \SaasRunner\Resources\Subscriber($this);
         $this->transactions = new \SaasRunner\Resources\Transaction($this);
+        $this->activations  = new \SaasRunner\Resources\Activation($this);
         $this->events       = new \SaasRunner\Resources\Event($this);
     }
 
