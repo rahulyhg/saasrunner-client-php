@@ -7,8 +7,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Paul Springett",
-            "email": "paul@simpleweb.co.uk"
+            "name": ["Paul Springett", "Peter Rhoades"],
+            "email": ["paul@simpleweb.co.uk", "pete@simpleweb.co.uk"]
         }
     ],
     "require": {
